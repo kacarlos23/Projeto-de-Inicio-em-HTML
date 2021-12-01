@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+    <title>Curso JavaScript W3Schools</title>
+	<style>
+	
+	</style>
+</head>
+
+<body>
+	<h2 id="titulo">What can JavaScript do?</h2>
+	<button onclick="traduzirTitulo()">Traduzir Título</button>
+
+	<p id="demo">JavaScript pode esconder elementos</p>
+	<button id="b2">Click to hide</button>
+	<button id="b3">Click to show</button>
+	<button id="bFonte">Mudar fonte</button>
+
+	<p>Adicionar numeros com um contador</p>
+	<button id="b1">Button</button>
+	<span id="texto">0</span>
+	
+	
+	<p>Mudar imagens</p>
+	<button id="acender">Turn on the light</button>
+	<img id="myImage" src="pic_bulboff.gif">
+	<button id="apagar">Turn off the light</button>
+	
+	<p>Somar</p>
+		<div id="resp">5 + 6 =</div>
+		<button id="calc" onclick="mostrarSoma()">somar</button>
+	
+    <script>
+		const b1 = document.getElementById('b1');
+		const b2 = document.getElementById('b2');
+		const b3 = document.getElementById('b3');
+		const texto = document.getElementById('texto');
+		const acender = document.getElementById('acender');
+		const apagar = document.getElementById('apagar');
+		const bFonte = document.getElementById('bFonte');
+		let patos = 0;
+		
+		b1.onclick = function() {
+			texto.innerText = patos;
+			patos++;
+		};
+
+		b2.onclick = function() {
+			document.getElementById('demo').style.display='none';
+		};
+		
+		b3.onclick = function() {
+			document.getElementById('demo').style.display='block';
+		}
+		
+		acender.onclick = function() {
+			document.getElementById('myImage').src='pic_bulbon.gif';
+		}
+		
+		apagar.onclick = function() {
+			document.getElementById('myImage').src='pic_bulboff.gif';
+		}
+		
+		bFonte.onclick = function() {
+			document.getElementById('demo').style.fontSize='35px';
+		}
+		
+		function traduzirTitulo() {
+			document.getElementById('titulo').innerHTML='O que o JavaScript pode fazer?';
+		}
+		
+		function mostrarSoma() {
+			document.getElementById('resp').innerHTML='5 + 6 = 11';
+		}
+		
+	</script>
+</body>
+</html>
